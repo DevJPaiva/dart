@@ -26,6 +26,22 @@ void main() {
     print(n1 * n2);
   }
 
+  String? entrada = stdin.readLineSync();
+
+  if (entrada != null && entrada != '') {
+    n1 = double.parse(entrada);
+  }
+
+  entrada = stdin.readLineSync();
+  if (entrada != null && entrada != '') {
+    n2 = double.parse(entrada);
+  }
+
+  entrada = stdin.readLineSync();
+  if (entrada != null) {
+    operacao = entrada;
+  }
+
   switch (operacao) {
     case '+':
       somar();
