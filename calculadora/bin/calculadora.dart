@@ -1,13 +1,8 @@
 import 'dart:io';
 
 void main() {
-  print('Digite o primeiro número:');
   double n1 = 0;
-
-  print('Digite o segundo número:');
   double n2 = 0;
-
-  print('Digite a operação (+, -, *, /):');
   String operacao = '';
 
   void somar() {
@@ -26,41 +21,48 @@ void main() {
     print(n1 * n2);
   }
 
-  String? entrada = stdin.readLineSync();
+  void calcular() {
+    switch (operacao) {
+      case '+':
+        somar();
+        break;
 
+      case '-':
+        subtrair();
+        break;
+
+      case '*':
+        multiplicar();
+        break;
+
+      case '/':
+        dividir();
+        break;
+
+      default:
+        print('Operação inválida. Use +, -, * ou /.');
+        break;
+    }
+  }
+
+  print('Digite o primeiro número:');
+
+  String? entrada = stdin.readLineSync();
   if (entrada != null && entrada != '') {
     n1 = double.parse(entrada);
   }
 
-  entrada = stdin.readLineSync();
-  if (entrada != null && entrada != '') {
-    n2 = double.parse(entrada);
-  }
-
+  print('Digite a operação (+, -, *, /):');
   entrada = stdin.readLineSync();
   if (entrada != null) {
     operacao = entrada;
   }
 
-  switch (operacao) {
-    case '+':
-      somar();
-      break;
-
-    case '-':
-      subtrair();
-      break;
-
-    case '*':
-      multiplicar();
-      break;
-
-    case '/':
-      dividir();
-      break;
-
-    default:
-      print('Operação inválida. Use +, -, * ou /.');
-      break;
+  print('Digite o segundo número:');
+  entrada = stdin.readLineSync();
+  if (entrada != null && entrada != '') {
+    n2 = double.parse(entrada);
   }
+
+  calcular();
 }
