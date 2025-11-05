@@ -2,13 +2,13 @@ import 'dart:io';
 
 void main() {
   print('Digite o primeiro número:');
-  double n1 = double.parse(stdin.readLineSync()!);
+  double n1 = 0;
 
   print('Digite o segundo número:');
-  double n2 = double.parse(stdin.readLineSync()!);
+  double n2 = 0;
 
   print('Digite a operação (+, -, *, /):');
-  String operacao = stdin.readLineSync()!.trim();
+  String operacao = '';
 
   void somar() {
     print(n1 + n2);
