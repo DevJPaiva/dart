@@ -64,5 +64,6 @@ void main() {
     n2 = double.parse(entrada);
   }
 
+print('O resultado é: ');
   calcular();
 }
